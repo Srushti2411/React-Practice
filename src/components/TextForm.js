@@ -9,7 +9,7 @@ function TextForm(props) {
       let newText = text.toLowerCase();
       setText(newText)
     }
-  const clearText = () =>{
+  const clearText = ()=>{
     let newText = ' '
     setText(newText)
   }

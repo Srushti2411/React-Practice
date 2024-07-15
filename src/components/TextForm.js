@@ -9,6 +9,15 @@ function TextForm(props) {
       let newText = text.toLowerCase();
       setText(newText)
     }
+  const copyText = ()=>{
+    var text =document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value)
+  }
+  const HandLeExtraSpace = ()=>{
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "))
+  }
   const clearText = ()=>{
     let newText = ' '
     setText(newText)
@@ -27,7 +36,9 @@ function TextForm(props) {
     </div>
     <button className='btn btn-primary mx-2' onClick={convertToUppercase}>Convert to Uppercase</button>
     <button className='btn btn-primary mx-2' onClick={convertToLowercase}>Convert to Lowercase</button>
-    <button className='btn btn-primary mx-2' onClick={clearText}>Clear text</button>
+    <button className='btn btn-primary mx-2' onClick={copyText}>Copy Text</button>
+    <button className='btn btn-primary mx-2' onClick={HandLeExtraSpace}>Remove Extra Space</button>
+    <button className='btn btn-primary mx-2' onClick={clearText}>Clear Text</button>
     </div>
 
     <div className='container my-3'>
